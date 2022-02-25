@@ -53,37 +53,15 @@
     </div>
 
     <div id='content'>
-		<script>document.getElementById('/').id = 'active'</script>
-        <p>A handy website for making endless rick roll URLs. Video players don't appear in Discord/other websites, so links are undetectable. If this website gets blacklisted, just host your own on a different domain :)</p>
+		<a class='btn' href='/'>< Back</a>
 		<br>
-		<h1 class='code'>Hide a URL</h1>
-		<br>
-		<form action='/api' class='outline'>
-			<label for='txt' style=
-				'color: white;'>URL: </label>
-			<input id='txt' name='txt'></input>
-			
-			<p class='minispacer'></p>
-			
-			<label for='func' style=
-				'color: white;'>Encoding: </label>
-			<select id='func' class='btn' name='func'>
-				<option>Base64</option>
-			</select>
-			
-			<p class='minispacer'></p>
-			
-			<input id='submit' type='submit' value='Encode URL' class='btn'></input>
-		</form>
-		<br>
-		<h1 class='code'>Other URLs</h1>
-		<br>
-		<p>
-			<a href='/rick'>Redirect to the OG Rick Roll (click to copy link)</a>
-			<br></br>
-			<a href='/library'>Redirect to the Library of Babel Rick Roll (click to copy link)</a>
+        <p>
+			Encoded URL:
+			<br>
+			<a href='{{ url }}' id='encoded-url' target='_blank'>{{ url }}</a>
 		</p>
-    </div>
+		<a class='btn' href='javascript:navigator.clipboard.writeText("{{ url }}")'>Copy URL</a>
+	</div>
 
     <img id='bigimg' nozoom='true' style='z-index: 2; position: fixed; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);'>
 
